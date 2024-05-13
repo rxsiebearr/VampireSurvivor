@@ -23,3 +23,4 @@ func take_damage():
 		var smoke = SMOKE_SCENE.instantiate()
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
+
