@@ -21,5 +21,5 @@ shape = SubResource("CircleShape2D_0l6x5")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Gun" parent="." instance=ExtResource("3_s27u5")]
-position = Vector2(105, -45)
+position = Vector2(1.00005, -45)
 rotation = 0.0639717
