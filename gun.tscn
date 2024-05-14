@@ -16,7 +16,7 @@ position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_cfejk")
 
 [node name="WeaponPivot" type="Marker2D" parent="."]
-rotation = -0.00597918
+rotation = -0.205222
 
 [node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
 position = Vector2(107.01, -1.3602)
@@ -25,7 +25,6 @@ texture = ExtResource("1_31s8u")
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
 unique_name_in_owner = true
 position = Vector2(25.6794, -11.5867)
-rotation = 1.56654
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
