@@ -16,6 +16,7 @@ position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_cfejk")
 
 [node name="WeaponPivot" type="Marker2D" parent="."]
+rotation = -0.205222
 
 [node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
 position = Vector2(107.01, -1.3602)
