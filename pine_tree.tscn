@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bneuto624lgmc"]
 
 [ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/ground_shadow.png" id="1_arhcs"]
-[ext_resource type="Texture2D" uid="uid://caqfk2xng5v5u" path="res://trees/pine_tree.png" id="2_8v3tl"]
+[ext_resource type="Texture2D" uid="uid://wqa4lqlpj5uu" path="res://bamboo.png" id="2_pxy61"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_by836"]
 radius = 25.02
@@ -15,8 +15,9 @@ scale = Vector2(0.892857, 0.903846)
 texture = ExtResource("1_arhcs")
 
 [node name="PineTree" type="Sprite2D" parent="."]
-position = Vector2(6, -13)
-texture = ExtResource("2_8v3tl")
+position = Vector2(26, -39)
+scale = Vector2(0.36875, 0.296875)
+texture = ExtResource("2_pxy61")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7, 50)
