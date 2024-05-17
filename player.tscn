@@ -1,24 +1,80 @@
-[gd_scene load_steps=8 format=3 uid="uid://dor42ffb0w0rd"]
+[gd_scene load_steps=16 format=3 uid="uid://dor42ffb0w0rd"]
 
-[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_erex3"]
 [ext_resource type="Script" path="res://player.gd" id="1_ppbc1"]
+[ext_resource type="Texture2D" uid="uid://crhy2w230avx2" path="res://POidle-Sheet.png" id="2_d4ln2"]
+[ext_resource type="Texture2D" uid="uid://cade07k04gj65" path="res://PO-Sheet.png" id="3_lt3vr"]
 [ext_resource type="PackedScene" uid="uid://b1a36eu6ukgni" path="res://gun.tscn" id="3_s27u5"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0l6x5"]
-radius = 27.074
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0tcv"]
+atlas = ExtResource("2_d4ln2")
+region = Rect2(0, 0, 320, 320)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0es13"]
-radius = 34.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gmdi"]
+atlas = ExtResource("2_d4ln2")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8g2sf"]
+atlas = ExtResource("2_d4ln2")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otbck"]
+atlas = ExtResource("3_lt3vr")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lue6q"]
+atlas = ExtResource("3_lt3vr")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32dko"]
+atlas = ExtResource("3_lt3vr")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xd7q5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0tcv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gmdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8g2sf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otbck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lue6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32dko")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4aqcs"]
+size = Vector2(81.5, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcrr4"]
+size = Vector2(88, 33)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtxfj"]
-bg_color = Color(0.776471, 0.956863, 0.772549, 1)
+bg_color = Color(0.729412, 0, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8iib"]
-bg_color = Color(0.952941, 0.772549, 0.858824, 1)
+bg_color = Color(0.733333, 0.87451, 0.74902, 0.996078)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -27,13 +83,16 @@ corner_radius_bottom_left = 8
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ppbc1")
 
-[node name="HappyBoo" parent="." instance=ExtResource("1_erex3")]
-unique_name_in_owner = true
-position = Vector2(-1, -13)
+[node name="Po" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.999997, -96)
+scale = Vector2(0.6375, 0.6375)
+sprite_frames = SubResource("SpriteFrames_xd7q5")
+animation = &"walk"
+frame_progress = 0.229076
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -21)
-shape = SubResource("CircleShape2D_0l6x5")
+position = Vector2(-0.75, -16)
+shape = SubResource("RectangleShape2D_4aqcs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -48,15 +107,15 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(-1, -17)
-shape = SubResource("CircleShape2D_0es13")
+shape = SubResource("RectangleShape2D_xcrr4")
 debug_color = Color(0.862745, 0.27451, 0.588235, 0.419608)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
-offset_left = -94.0
-offset_top = -153.0
-offset_right = 94.0
-offset_bottom = -128.0
+offset_left = -93.0
+offset_top = -241.0
+offset_right = 95.0
+offset_bottom = -216.0
 theme_override_styles/background = SubResource("StyleBoxFlat_dtxfj")
 theme_override_styles/fill = SubResource("StyleBoxFlat_g8iib")
 value = 100.0

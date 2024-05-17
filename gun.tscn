@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1a36eu6ukgni"]
 
 [ext_resource type="Script" path="res://gun.gd" id="1_58ut5"]
-[ext_resource type="Texture2D" path="res://pistol/gun.png" id="2_qdfn8"]
+[ext_resource type="Texture2D" uid="uid://jupgqin84r7" path="res://pistol/gun.png" id="2_qdfn8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cfejk"]
 radius = 989.245
@@ -18,7 +18,7 @@ shape = SubResource("CircleShape2D_cfejk")
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
 [node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
-position = Vector2(97, 1)
+position = Vector2(189, -5)
 scale = Vector2(2.99969, 2.99969)
 texture = ExtResource("2_qdfn8")
 
