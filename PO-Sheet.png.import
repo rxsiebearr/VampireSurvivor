@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crhy2w230avx2"
-path="res://.godot/imported/POidle-Sheet.png-8f8fabe4e62fc7203b72a6a2e20de487.ctex"
+uid="uid://cade07k04gj65"
+path="res://.godot/imported/PO-Sheet.png-994370cb3ebcdbb894a1cf0d095c1169.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/POidle-Sheet.png"
-dest_files=["res://.godot/imported/POidle-Sheet.png-8f8fabe4e62fc7203b72a6a2e20de487.ctex"]
+source_file="res://PO-Sheet.png"
+dest_files=["res://.godot/imported/PO-Sheet.png-994370cb3ebcdbb894a1cf0d095c1169.ctex"]
 
 [params]
 

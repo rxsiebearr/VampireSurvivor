@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 signal health_depleted
-
-var health = 100
+@onready var po: AnimatedSprite2D = $Po
+var health = 300
 
 
 func _physics_process(delta:):
@@ -11,9 +11,9 @@ func _physics_process(delta:):
 	move_and_slide()
 
 	if velocity.length() > 0.0:
-		%HappyBoo.play_walk_animation()
+		po.play("walk")
 	else:
-		%HappyBoo.play_idle_animation()
+		po.play("idle")
 	
 	const DAMAGE_RATE = 10.0
 	var overlappimg_mobs = %HurtBox.get_overlapping_bodies()
