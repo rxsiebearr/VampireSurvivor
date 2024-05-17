@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal health_depleted
 @onready var po: AnimatedSprite2D = $Po
-var health = 300
+var health = 150
 
 
 func _physics_process(delta:):
