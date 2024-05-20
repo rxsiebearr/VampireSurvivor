@@ -1,4 +1,7 @@
 extends Node2D
+
+func _ready():
+	$BackgroundMusic.play()
 	
 func spawn_mob():
 	var new_mob = preload("res://mob.tscn").instantiate()
@@ -12,6 +15,8 @@ func _on_timer_timeout():
 
 
 func _on_player_health_depleted():
+	$BackgroundMusic.stop()
+	$DeathSound.play()
 	%GameOver.visible = true
 	get_tree().paused = true
 	

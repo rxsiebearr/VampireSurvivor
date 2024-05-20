@@ -15,7 +15,7 @@ func _physics_process(delta:):
 	else:
 		po.play("idle")
 	
-	const DAMAGE_RATE = 10.0
+	const DAMAGE_RATE = 100.0
 	var overlappimg_mobs = %HurtBox.get_overlapping_bodies()
 	if overlappimg_mobs.size() > 0:
 		health -= DAMAGE_RATE * overlappimg_mobs.size() * delta

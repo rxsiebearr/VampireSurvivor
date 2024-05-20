@@ -97,8 +97,8 @@ shape = SubResource("RectangleShape2D_4aqcs")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Gun" parent="." instance=ExtResource("3_s27u5")]
-position = Vector2(1.00005, -45)
-rotation = 0.0639717
+position = Vector2(1, -45)
+rotation = 0.0645772
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
