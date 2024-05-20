@@ -9,16 +9,6 @@ radius = 186.507
 
 [node name="InsideShop" type="Node2D"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(965, 542)
 scale = Vector2(0.630291, 0.262401)

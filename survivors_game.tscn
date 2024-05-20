@@ -13,7 +13,7 @@ _data = {
 point_count = 5
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ehdcv"]
-radius = 53.0
+radius = 45.0
 height = 162.0
 
 [node name="Game" type="Node2D"]
@@ -26,6 +26,7 @@ layer = -100
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_right = 1926.0
 offset_bottom = 1086.0
+color = Color(0.145098, 0.572549, 0.4, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_selpa")]
 position = Vector2(1046, 463)
