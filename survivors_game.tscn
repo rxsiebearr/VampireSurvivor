@@ -1,15 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://bes0iv23foecu"]
+[gd_scene load_steps=8 format=3 uid="uid://bes0iv23foecu"]
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_fykaj"]
 [ext_resource type="PackedScene" uid="uid://dor42ffb0w0rd" path="res://player.tscn" id="1_selpa"]
 [ext_resource type="PackedScene" uid="uid://bneuto624lgmc" path="res://bamboo.tscn" id="2_m4pl6"]
 [ext_resource type="PackedScene" uid="uid://cwfkv8mu8cgnw" path="res://noodle_shop.tscn" id="4_bc7f6"]
+[ext_resource type="Script" path="res://entershop.gd" id="5_vap4r"]
 
 [sub_resource type="Curve2D" id="Curve2D_4iehk"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -105, -81, 0, 0, 0, 0, -141, 1093, 0, 0, 0, 0, 2015, 1150, 0, 0, 0, 0, 2024, -79, 0, 0, 0, 0, -123, -81)
 }
 point_count = 5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ehdcv"]
+radius = 53.0
+height = 162.0
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -86,5 +91,15 @@ text = "BYE BYE"
 [node name="NoodleShop" parent="." instance=ExtResource("4_bc7f6")]
 position = Vector2(158, 327)
 
+[node name="EnterShop" type="Area2D" parent="."]
+script = ExtResource("5_vap4r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnterShop"]
+position = Vector2(397, 406)
+shape = SubResource("CapsuleShape2D_ehdcv")
+debug_color = Color(0.807843, 0.00392157, 0.992157, 0.419608)
+
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="EnterShop" to="EnterShop" method="_on_body_entered"]
+[connection signal="body_exited" from="EnterShop" to="EnterShop" method="_on_body_exited"]

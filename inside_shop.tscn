@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://x3373qkm7y22"]
+
+[ext_resource type="Script" path="res://leaveshop.gd" id="1_1s37m"]
+[ext_resource type="PackedScene" uid="uid://dor42ffb0w0rd" path="res://player.tscn" id="1_771jf"]
+[ext_resource type="Texture2D" uid="uid://b7vrhfarut67n" path="res://bear.jpeg" id="1_kcpqi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_klt5j"]
+radius = 186.507
+
+[node name="InsideShop" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(965, 542)
+scale = Vector2(0.630291, 0.262401)
+texture = ExtResource("1_kcpqi")
+
+[node name="LeaveShop" type="Area2D" parent="."]
+script = ExtResource("1_1s37m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeaveShop"]
+position = Vector2(1453, 840)
+shape = SubResource("CircleShape2D_klt5j")
+
+[node name="Player" parent="." instance=ExtResource("1_771jf")]
+position = Vector2(224, 437)
+
+[connection signal="body_entered" from="LeaveShop" to="LeaveShop" method="_on_body_entered"]
+[connection signal="body_exited" from="LeaveShop" to="LeaveShop" method="_on_body_exited"]
