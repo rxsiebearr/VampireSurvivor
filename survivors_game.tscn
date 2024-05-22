@@ -14,7 +14,7 @@ point_count = 5
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ehdcv"]
 radius = 45.0
-height = 162.0
+height = 236.0
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -28,7 +28,7 @@ offset_right = 1926.0
 offset_bottom = 1086.0
 color = Color(0.145098, 0.572549, 0.4, 1)
 
-[node name="Player" parent="." instance=ExtResource("1_selpa")]
+[node name="Player" parent="." groups=["store"] instance=ExtResource("1_selpa")]
 position = Vector2(1046, 463)
 
 [node name="Path2D" type="Path2D" parent="Player"]

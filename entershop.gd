@@ -3,7 +3,8 @@ extends Area2D
 var entered = false
 
 func _on_body_entered(body: PhysicsBody2D):
-	entered = true
+	if body.is_in_group("store"):
+		entered = true
 
 func _on_body_exited(body):
 	entered = false
