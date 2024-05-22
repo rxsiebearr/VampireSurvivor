@@ -5,28 +5,55 @@
 [ext_resource type="PackedScene" uid="uid://dor42ffb0w0rd" path="res://player.tscn" id="1_771jf"]
 [ext_resource type="PackedScene" uid="uid://blfxwe4sjm6iq" path="res://mr_peery.tscn" id="4_pd8go"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_klt5j"]
-radius = 186.507
+[sub_resource type="CircleShape2D" id="CircleShape2D_6knom"]
 
 [node name="InsideShop" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(223.751, 439.5)
-scale = Vector2(0.996615, 1.31728)
+position = Vector2(956, 541.25)
+scale = Vector2(0.996615, 1.33642)
 texture = ExtResource("1_60ene")
 
 [node name="LeaveShop" type="Area2D" parent="."]
 script = ExtResource("1_1s37m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeaveShop"]
-position = Vector2(1453, 840)
-shape = SubResource("CircleShape2D_klt5j")
+position = Vector2(-9, 2)
+shape = SubResource("CircleShape2D_6knom")
 
 [node name="Player" parent="." instance=ExtResource("1_771jf")]
-position = Vector2(-639, 974)
+position = Vector2(154, 1003)
 
 [node name="MrPeery" parent="." instance=ExtResource("4_pd8go")]
-position = Vector2(419, 792)
+position = Vector2(1438, 822)
+
+[node name="WinScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="WinScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.317647)
+
+[node name="Label" type="Label" parent="WinScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -11.5
+offset_right = 21.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "yipee"
 
 [connection signal="body_entered" from="LeaveShop" to="LeaveShop" method="_on_body_entered"]
 [connection signal="body_exited" from="LeaveShop" to="LeaveShop" method="_on_body_exited"]

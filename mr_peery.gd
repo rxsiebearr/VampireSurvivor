@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 500
+var health = 1
 @onready var player = get_node("/root/InsideShop/Player")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -21,3 +21,5 @@ func take_damage():
 		var smoke = SMOKE_SCENE.instantiate()
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
+		%WinScreen.visible = true
+		get_tree().paused = true
