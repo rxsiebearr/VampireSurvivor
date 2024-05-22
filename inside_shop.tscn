@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://x3373qkm7y22"]
+[gd_scene load_steps=6 format=3 uid="uid://x3373qkm7y22"]
 
 [ext_resource type="Script" path="res://leaveshop.gd" id="1_1s37m"]
+[ext_resource type="Texture2D" uid="uid://c67ir13jif51p" path="res://oogwayland.png" id="1_60ene"]
 [ext_resource type="PackedScene" uid="uid://dor42ffb0w0rd" path="res://player.tscn" id="1_771jf"]
-[ext_resource type="Texture2D" uid="uid://b7vrhfarut67n" path="res://bear.jpeg" id="1_kcpqi"]
+[ext_resource type="PackedScene" uid="uid://blfxwe4sjm6iq" path="res://mr_peery.tscn" id="4_pd8go"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_klt5j"]
 radius = 186.507
@@ -10,9 +11,9 @@ radius = 186.507
 [node name="InsideShop" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(965, 542)
-scale = Vector2(0.630291, 0.262401)
-texture = ExtResource("1_kcpqi")
+position = Vector2(223.751, 439.5)
+scale = Vector2(0.996615, 1.31728)
+texture = ExtResource("1_60ene")
 
 [node name="LeaveShop" type="Area2D" parent="."]
 script = ExtResource("1_1s37m")
@@ -22,7 +23,10 @@ position = Vector2(1453, 840)
 shape = SubResource("CircleShape2D_klt5j")
 
 [node name="Player" parent="." instance=ExtResource("1_771jf")]
-position = Vector2(224, 437)
+position = Vector2(-639, 974)
+
+[node name="MrPeery" parent="." instance=ExtResource("4_pd8go")]
+position = Vector2(419, 792)
 
 [connection signal="body_entered" from="LeaveShop" to="LeaveShop" method="_on_body_entered"]
 [connection signal="body_exited" from="LeaveShop" to="LeaveShop" method="_on_body_exited"]
