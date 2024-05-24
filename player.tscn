@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://dor42ffb0w0rd"]
+[gd_scene load_steps=17 format=3 uid="uid://dor42ffb0w0rd"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ppbc1"]
 [ext_resource type="Texture2D" uid="uid://crhy2w230avx2" path="res://POidle-Sheet.png" id="2_d4ln2"]
 [ext_resource type="Texture2D" uid="uid://cade07k04gj65" path="res://PO-Sheet.png" id="3_lt3vr"]
 [ext_resource type="PackedScene" uid="uid://b1a36eu6ukgni" path="res://gun.tscn" id="3_s27u5"]
+[ext_resource type="PackedScene" uid="uid://dsnppfiawce0b" path="res://counter.tscn" id="5_h6c5d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0tcv"]
 atlas = ExtResource("2_d4ln2")
@@ -98,7 +99,6 @@ shape = SubResource("RectangleShape2D_4aqcs")
 
 [node name="Gun" parent="." instance=ExtResource("3_s27u5")]
 position = Vector2(1.00005, -45)
-rotation = 0.0639717
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -120,3 +120,9 @@ theme_override_styles/background = SubResource("StyleBoxFlat_dtxfj")
 theme_override_styles/fill = SubResource("StyleBoxFlat_g8iib")
 value = 100.0
 show_percentage = false
+
+[node name="Counter" parent="." instance=ExtResource("5_h6c5d")]
+offset_left = 10.0
+offset_top = -281.0
+offset_right = 10.0
+offset_bottom = -281.0
