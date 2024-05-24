@@ -3,7 +3,8 @@ extends CharacterBody2D
 signal health_depleted
 @onready var po: AnimatedSprite2D = $Po
 var health = 150
-	
+
+
 func _physics_process(delta:):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * 1000.0
