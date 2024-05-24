@@ -17,15 +17,16 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 69.0
-offset_top = -54.0
-offset_right = 109.0
-offset_bottom = -31.0
+offset_left = 98.0
+offset_top = -55.0
+offset_right = 121.0
+offset_bottom = -26.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "x0"
 
 [node name="Sprite2D" type="Sprite2D" parent="Label"]
-position = Vector2(-29, 10)
-scale = Vector2(0.25625, 0.25625)
+position = Vector2(-46, -3)
+scale = Vector2(0.40625, 0.40625)
 texture = ExtResource("2_qrma7")
