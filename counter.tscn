@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn3x5ylq2tkch"]
+
+[ext_resource type="Script" path="res://xlbcounter.gd" id="1_df0h6"]
+[ext_resource type="Texture2D" uid="uid://dirmst7a3lesy" path="res://hurtdumpling.png" id="2_qrma7"]
+
+[node name="Counter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_df0h6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 98.0
+offset_top = -55.0
+offset_right = 121.0
+offset_bottom = -26.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "x0"
+
+[node name="Sprite2D" type="Sprite2D" parent="Label"]
+position = Vector2(-46, -3)
+scale = Vector2(0.40625, 0.40625)
+texture = ExtResource("2_qrma7")
