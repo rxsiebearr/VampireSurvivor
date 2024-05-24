@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bew0hfs2frggl"]
+
+[ext_resource type="Script" path="res://Label.gd" id="1_g88k1"]
+[ext_resource type="Texture2D" uid="uid://dirmst7a3lesy" path="res://hurtdumpling.png" id="2_dk120"]
+
+[node name="XLBCounter" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 42.0
+offset_bottom = 23.0
+text = "x0"
+script = ExtResource("1_g88k1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-23, 12)
+scale = Vector2(0.195313, 0.195313)
+texture = ExtResource("2_dk120")
