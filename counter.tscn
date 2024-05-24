@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dn3x5ylq2tkch"]
+[gd_scene load_steps=3 format=3 uid="uid://qdulc6vdkasu"]
 
 [ext_resource type="Script" path="res://xlbcounter.gd" id="1_df0h6"]
 [ext_resource type="Texture2D" uid="uid://dirmst7a3lesy" path="res://hurtdumpling.png" id="2_qrma7"]

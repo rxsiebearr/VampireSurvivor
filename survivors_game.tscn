@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bes0iv23foecu"]
+[gd_scene load_steps=8 format=3 uid="uid://bes0iv23foecu"]
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_fykaj"]
 [ext_resource type="PackedScene" uid="uid://dor42ffb0w0rd" path="res://player.tscn" id="1_selpa"]
-[ext_resource type="PackedScene" path="res://pine_tree.tscn" id="2_m4pl6"]
-[ext_resource type="AudioStream" uid="uid://xivhkwk3ak7f" path="res://chinese-doit_qjQ0ubS.mp3" id="3_4gw27"]
+[ext_resource type="PackedScene" uid="uid://bneuto624lgmc" path="res://pine_tree.tscn" id="2_m4pl6"]
+[ext_resource type="AudioStream" path="res://chinese-doit_qjQ0ubS.mp3" id="3_4gw27"]
 [ext_resource type="AudioStream" path="res://Cee Lo Green - Kung Fu Fighting (15 Mins Extended).mp3" id="4_0emac"]
+[ext_resource type="PackedScene" uid="uid://qdulc6vdkasu" path="res://counter.tscn" id="4_25qhv"]
 
 [sub_resource type="Curve2D" id="Curve2D_4iehk"]
 _data = {
@@ -90,6 +91,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 155
 text = "BYE BYE"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Counter" parent="CanvasLayer2" instance=ExtResource("4_25qhv")]
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
