@@ -6,7 +6,7 @@ var health = 500
 
 func _ready():
 	animated_sprite_2d.play("normal")
-
+	
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
 	velocity = direction * 500
@@ -14,6 +14,7 @@ func _physics_process(delta):
 	
 func take_damage():
 	health -= 1
+	%ProgressBar.value = health
 	animated_sprite_2d.play("hurt")
 	
 	if health == 0:

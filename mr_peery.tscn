@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://blfxwe4sjm6iq"]
+[gd_scene load_steps=12 format=3 uid="uid://bjkiwyqt84x3j"]
 
 [ext_resource type="Script" path="res://mr_peery.gd" id="1_8w63o"]
 [ext_resource type="Texture2D" uid="uid://ts47exdtw3ln" path="res://angry peery-Sheet.png" id="2_sqjjd"]

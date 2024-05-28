@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bneuto624lgmc"]
+[gd_scene load_steps=4 format=3 uid="uid://b01pc1e5hswut"]
 
 [ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/ground_shadow.png" id="1_arhcs"]
 [ext_resource type="Texture2D" uid="uid://wqa4lqlpj5uu" path="res://bamboo.png" id="2_pxy61"]

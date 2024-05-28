@@ -1,11 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://x3373qkm7y22"]
+[gd_scene load_steps=8 format=3 uid="uid://cdcx6ekusripp"]
 
 [ext_resource type="Script" path="res://leaveshop.gd" id="1_1s37m"]
-[ext_resource type="Texture2D" uid="uid://c67ir13jif51p" path="res://oogwayland.png" id="1_60ene"]
+[ext_resource type="Texture2D" path="res://oogwayland.png" id="1_60ene"]
 [ext_resource type="PackedScene" uid="uid://dor42ffb0w0rd" path="res://player.tscn" id="1_771jf"]
-[ext_resource type="PackedScene" uid="uid://blfxwe4sjm6iq" path="res://mr_peery.tscn" id="4_pd8go"]
+[ext_resource type="PackedScene" uid="uid://bjkiwyqt84x3j" path="res://mr_peery.tscn" id="4_pd8go"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6knom"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7t5kf"]
+bg_color = Color(0.729412, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fve78"]
+bg_color = Color(0.733333, 0.87451, 0.74902, 0.996078)
 
 [node name="InsideShop" type="Node2D"]
 
@@ -54,6 +60,30 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 100
 text = "yipee"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 246.0
+offset_top = 118.0
+offset_right = -224.0
+offset_bottom = 141.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_7t5kf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fve78")
+max_value = 500.0
+value = 500.0
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 848.0
+offset_top = 39.0
+offset_right = 1081.0
+offset_bottom = 108.0
+theme_override_font_sizes/font_size = 50
+text = "Mr. Peery"
 
 [connection signal="body_entered" from="LeaveShop" to="LeaveShop" method="_on_body_entered"]
 [connection signal="body_exited" from="LeaveShop" to="LeaveShop" method="_on_body_exited"]
