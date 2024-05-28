@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
-var health = 1
+var health = 500
 @onready var player = get_node("/root/InsideShop/Player")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+func _ready():
+	animated_sprite_2d.play("normal")
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
