@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://bjkiwyqt84x3j"]
 
 [ext_resource type="Script" path="res://mr_peery.gd" id="1_8w63o"]
-[ext_resource type="Texture2D" uid="uid://ts47exdtw3ln" path="res://angry peery-Sheet.png" id="2_sqjjd"]
-[ext_resource type="Texture2D" uid="uid://5tmq5ksfmwmj" path="res://normal peery run-Sheet.png" id="3_0qtao"]
+[ext_resource type="Texture2D" path="res://angry peery-Sheet.png" id="2_sqjjd"]
+[ext_resource type="Texture2D" path="res://normal peery run-Sheet.png" id="3_0qtao"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ba81j"]
 atlas = ExtResource("2_sqjjd")
@@ -59,8 +59,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tjf1k"]
-radius = 75.06
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xgwfp"]
+radius = 64.0
+height = 220.0
 
 [node name="MrPeery" type="CharacterBody2D"]
 collision_layer = 2
@@ -72,4 +73,5 @@ sprite_frames = SubResource("SpriteFrames_acbe1")
 animation = &"normal"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_tjf1k")
+position = Vector2(-9, -1)
+shape = SubResource("CapsuleShape2D_xgwfp")

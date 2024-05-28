@@ -1,24 +1,36 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdcx6ekusripp"]
+[gd_scene load_steps=9 format=3 uid="uid://cdcx6ekusripp"]
 
 [ext_resource type="Script" path="res://leaveshop.gd" id="1_1s37m"]
-[ext_resource type="Texture2D" path="res://oogwayland.png" id="1_60ene"]
+[ext_resource type="Texture2D" path="res://image.png" id="1_7bsgg"]
 [ext_resource type="PackedScene" uid="uid://dor42ffb0w0rd" path="res://player.tscn" id="1_771jf"]
 [ext_resource type="PackedScene" uid="uid://bjkiwyqt84x3j" path="res://mr_peery.tscn" id="4_pd8go"]
+[ext_resource type="FontFile" path="res://Endless Boss Battle.ttf" id="5_5spq0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6knom"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7t5kf"]
 bg_color = Color(0.729412, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fve78"]
 bg_color = Color(0.733333, 0.87451, 0.74902, 0.996078)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="InsideShop" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(956, 541.25)
-scale = Vector2(0.996615, 1.33642)
-texture = ExtResource("1_60ene")
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.57205)
+texture = ExtResource("1_7bsgg")
 
 [node name="LeaveShop" type="Area2D" parent="."]
 script = ExtResource("1_1s37m")
@@ -28,10 +40,7 @@ position = Vector2(-9, 2)
 shape = SubResource("CircleShape2D_6knom")
 
 [node name="Player" parent="." instance=ExtResource("1_771jf")]
-position = Vector2(154, 1003)
-
-[node name="MrPeery" parent="." instance=ExtResource("4_pd8go")]
-position = Vector2(1438, 822)
+position = Vector2(159, 1002)
 
 [node name="WinScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -65,25 +74,41 @@ text = "yipee"
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
 unique_name_in_owner = true
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = 246.0
-offset_top = 118.0
-offset_right = -224.0
-offset_bottom = 141.0
+anchor_bottom = 1.0
+offset_left = 264.0
+offset_top = 143.0
+offset_right = -239.0
+offset_bottom = -914.0
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 theme_override_styles/background = SubResource("StyleBoxFlat_7t5kf")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fve78")
 max_value = 500.0
 value = 500.0
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 848.0
-offset_top = 39.0
-offset_right = 1081.0
-offset_bottom = 108.0
-theme_override_font_sizes/font_size = 50
-text = "Mr. Peery"
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.0
+offset_top = -461.0
+offset_right = 208.0
+offset_bottom = -370.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.635294, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_5spq0")
+theme_override_font_sizes/font_size = 75
+text = "MR. PEERY"
+
+[node name="MrPeery" parent="." instance=ExtResource("4_pd8go")]
+position = Vector2(1147, 714)
 
 [connection signal="body_entered" from="LeaveShop" to="LeaveShop" method="_on_body_entered"]
 [connection signal="body_exited" from="LeaveShop" to="LeaveShop" method="_on_body_exited"]

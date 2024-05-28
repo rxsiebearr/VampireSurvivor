@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_fykaj"]
 [ext_resource type="PackedScene" uid="uid://dor42ffb0w0rd" path="res://player.tscn" id="1_selpa"]
-[ext_resource type="PackedScene" uid="uid://b01pc1e5hswut" path="res://Bamboo.tscn" id="2_m4pl6"]
-[ext_resource type="PackedScene" uid="uid://beqx0k5jyi8bo" path="res://noodle_shop.tscn" id="4_bc7f6"]
+[ext_resource type="PackedScene" path="res://bamboo.tscn" id="2_m4pl6"]
+[ext_resource type="PackedScene" path="res://noodle_shop.tscn" id="4_bc7f6"]
 [ext_resource type="Script" path="res://entershop.gd" id="5_vap4r"]
 
 [sub_resource type="Curve2D" id="Curve2D_4iehk"]
