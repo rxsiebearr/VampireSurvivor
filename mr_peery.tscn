@@ -4,27 +4,27 @@
 [ext_resource type="Texture2D" path="res://angry peery-Sheet.png" id="2_sqjjd"]
 [ext_resource type="Texture2D" path="res://normal peery run-Sheet.png" id="3_0qtao"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ba81j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdnat"]
 atlas = ExtResource("2_sqjjd")
 region = Rect2(0, 0, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hx5qs"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_66mij"]
 atlas = ExtResource("2_sqjjd")
 region = Rect2(320, 0, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_smep5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_27tka"]
 atlas = ExtResource("2_sqjjd")
 region = Rect2(640, 0, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dd600"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4aml"]
 atlas = ExtResource("3_0qtao")
 region = Rect2(0, 0, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0cl5b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpjqw"]
 atlas = ExtResource("3_0qtao")
 region = Rect2(320, 0, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ip77x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oosj4"]
 atlas = ExtResource("3_0qtao")
 region = Rect2(640, 0, 320, 320)
 
@@ -32,13 +32,13 @@ region = Rect2(640, 0, 320, 320)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ba81j")
+"texture": SubResource("AtlasTexture_cdnat")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hx5qs")
+"texture": SubResource("AtlasTexture_66mij")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_smep5")
+"texture": SubResource("AtlasTexture_27tka")
 }],
 "loop": true,
 "name": &"hurt",
@@ -46,22 +46,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dd600")
+"texture": SubResource("AtlasTexture_m4aml")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0cl5b")
+"texture": SubResource("AtlasTexture_cpjqw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ip77x")
+"texture": SubResource("AtlasTexture_oosj4")
 }],
 "loop": true,
-"name": &"normal",
+"name": &"walk",
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xgwfp"]
-radius = 64.0
-height = 220.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1m50"]
+radius = 67.0
+height = 210.0
 
 [node name="MrPeery" type="CharacterBody2D"]
 collision_layer = 2
@@ -70,8 +70,8 @@ script = ExtResource("1_8w63o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_acbe1")
-animation = &"normal"
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-9, -1)
-shape = SubResource("CapsuleShape2D_xgwfp")
+position = Vector2(-9, 0)
+shape = SubResource("CapsuleShape2D_x1m50")
