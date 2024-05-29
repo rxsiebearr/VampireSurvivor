@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=3 format=3 uid="uid://qdulc6vdkasu"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://px8fh2l7gttw"]
+>>>>>>> Add-XLB-Counter
 
 [ext_resource type="Script" path="res://xlbcounter.gd" id="1_df0h6"]
 [ext_resource type="Texture2D" uid="uid://dirmst7a3lesy" path="res://hurtdumpling.png" id="2_qrma7"]
@@ -17,16 +21,16 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 98.0
-offset_top = -55.0
-offset_right = 121.0
-offset_bottom = -26.0
+offset_left = 116.0
+offset_top = -53.0
+offset_right = 155.0
+offset_bottom = -4.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 35
 text = "x0"
 
 [node name="Sprite2D" type="Sprite2D" parent="Label"]
-position = Vector2(-46, -3)
-scale = Vector2(0.40625, 0.40625)
+position = Vector2(-57, 5)
+scale = Vector2(0.521875, 0.521875)
 texture = ExtResource("2_qrma7")
