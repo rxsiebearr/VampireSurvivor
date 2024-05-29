@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bes0iv23foecu"]
+[gd_scene load_steps=7 format=3 uid="uid://bes0iv23foecu"]
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_fykaj"]
 [ext_resource type="PackedScene" uid="uid://dor42ffb0w0rd" path="res://player.tscn" id="1_selpa"]
-[ext_resource type="PackedScene" uid="uid://c154d68ptg6rn" path="res://Bamboo.tscn" id="2_m4pl6"]
 [ext_resource type="AudioStream" uid="uid://xivhkwk3ak7f" path="res://chinese-doit_qjQ0ubS.mp3" id="3_4gw27"]
-[ext_resource type="AudioStream" path="res://Cee Lo Green - Kung Fu Fighting (15 Mins Extended).mp3" id="4_0emac"]
-[ext_resource type="PackedScene" path="res://counter.tscn" id="4_25qhv"]
+[ext_resource type="AudioStream" uid="uid://drrgtm2j7v57t" path="res://Cee Lo Green - Kung Fu Fighting (15 Mins Extended).mp3" id="4_0emac"]
+[ext_resource type="PackedScene" uid="uid://c154d68ptg6rn" path="res://bamboo.tscn" id="4_25qhv"]
 
 [sub_resource type="Curve2D" id="Curve2D_4iehk"]
 _data = {
@@ -43,22 +42,22 @@ unique_name_in_owner = true
 position = Vector2(-105, -81)
 rotation = 1.60145
 
-[node name="PineTree" parent="." instance=ExtResource("2_m4pl6")]
+[node name="PineTree" parent="." instance=ExtResource("4_25qhv")]
 position = Vector2(647, 247)
 
-[node name="PineTree2" parent="." instance=ExtResource("2_m4pl6")]
+[node name="PineTree2" parent="." instance=ExtResource("4_25qhv")]
 position = Vector2(423, 737)
 
-[node name="PineTree3" parent="." instance=ExtResource("2_m4pl6")]
+[node name="PineTree3" parent="." instance=ExtResource("4_25qhv")]
 position = Vector2(1387, 440)
 
-[node name="PineTree4" parent="." instance=ExtResource("2_m4pl6")]
+[node name="PineTree4" parent="." instance=ExtResource("4_25qhv")]
 position = Vector2(1311, 383)
 
-[node name="PineTree5" parent="." instance=ExtResource("2_m4pl6")]
+[node name="PineTree5" parent="." instance=ExtResource("4_25qhv")]
 position = Vector2(1459, 827)
 
-[node name="PineTree6" parent="." instance=ExtResource("2_m4pl6")]
+[node name="PineTree6" parent="." instance=ExtResource("4_25qhv")]
 position = Vector2(1319, 448)
 
 [node name="Timer" type="Timer" parent="."]
