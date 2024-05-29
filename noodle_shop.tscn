@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ttkuqjdm4r0o"]
+
+[ext_resource type="Texture2D" path="res://characters/noodleshop.png" id="1_23xqk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b87s5"]
+size = Vector2(429.25, 141)
+
+[node name="NoodleShop" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(126.75, -111.75)
+scale = Vector2(0.878906, 0.878906)
+texture = ExtResource("1_23xqk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(96, 63)
+shape = SubResource("RectangleShape2D_b87s5")
