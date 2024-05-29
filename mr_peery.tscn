@@ -1,25 +1,67 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjkiwyqt84x3j"]
+[gd_scene load_steps=12 format=3 uid="uid://bjkiwyqt84x3j"]
 
 [ext_resource type="Script" path="res://mr_peery.gd" id="1_8w63o"]
-[ext_resource type="Texture2D" uid="uid://i4cjdwy1kcoj" path="res://icon.png" id="1_wy0um"]
+[ext_resource type="Texture2D" path="res://angry peery-Sheet.png" id="2_sqjjd"]
+[ext_resource type="Texture2D" path="res://normal peery run-Sheet.png" id="3_0qtao"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8hby4"]
-atlas = ExtResource("1_wy0um")
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdnat"]
+atlas = ExtResource("2_sqjjd")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66mij"]
+atlas = ExtResource("2_sqjjd")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27tka"]
+atlas = ExtResource("2_sqjjd")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4aml"]
+atlas = ExtResource("3_0qtao")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpjqw"]
+atlas = ExtResource("3_0qtao")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oosj4"]
+atlas = ExtResource("3_0qtao")
+region = Rect2(640, 0, 320, 320)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_acbe1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8hby4")
+"texture": SubResource("AtlasTexture_cdnat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66mij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27tka")
 }],
 "loop": true,
 "name": &"hurt",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4aml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpjqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oosj4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tjf1k"]
-radius = 75.06
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1m50"]
+radius = 67.0
+height = 210.0
 
 [node name="MrPeery" type="CharacterBody2D"]
 collision_layer = 2
@@ -28,7 +70,8 @@ script = ExtResource("1_8w63o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_acbe1")
-animation = &"hurt"
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_tjf1k")
+position = Vector2(-9, 0)
+shape = SubResource("CapsuleShape2D_x1m50")

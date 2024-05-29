@@ -13,7 +13,6 @@ func spawn_mob():
 func _on_timer_timeout():
 	spawn_mob()
 
-
 func _on_player_health_depleted():
 	$BackgroundMusic.stop()
 	$DeathSound.play()

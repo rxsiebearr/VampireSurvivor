@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bes0iv23foecu"]
+[gd_scene load_steps=9 format=3 uid="uid://bes0iv23foecu"]
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_fykaj"]
 [ext_resource type="PackedScene" uid="uid://dor42ffb0w0rd" path="res://player.tscn" id="1_selpa"]
-[ext_resource type="AudioStream" uid="uid://xivhkwk3ak7f" path="res://chinese-doit_qjQ0ubS.mp3" id="3_4gw27"]
-[ext_resource type="AudioStream" uid="uid://drrgtm2j7v57t" path="res://Cee Lo Green - Kung Fu Fighting (15 Mins Extended).mp3" id="4_0emac"]
-[ext_resource type="PackedScene" uid="uid://c154d68ptg6rn" path="res://bamboo.tscn" id="4_25qhv"]
+[ext_resource type="PackedScene" path="res://bamboo.tscn" id="2_m4pl6"]
+[ext_resource type="PackedScene" uid="uid://ttkuqjdm4r0o" path="res://noodle_shop.tscn" id="4_bc7f6"]
+[ext_resource type="Script" path="res://entershop.gd" id="5_vap4r"]
+[ext_resource type="Texture2D" uid="uid://dirmst7a3lesy" path="res://hurtdumpling.png" id="6_roua1"]
 
 [sub_resource type="Curve2D" id="Curve2D_4iehk"]
 _data = {
@@ -12,16 +13,13 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ehdcv"]
+radius = 45.0
+height = 236.0
+
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_fykaj")
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_0emac")
-
-[node name="DeathSound" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("3_4gw27")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -100
@@ -29,8 +27,9 @@ layer = -100
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_right = 1926.0
 offset_bottom = 1086.0
+color = Color(0.145098, 0.572549, 0.4, 1)
 
-[node name="Player" parent="." instance=ExtResource("1_selpa")]
+[node name="Player" parent="." groups=["store"] instance=ExtResource("1_selpa")]
 position = Vector2(1046, 463)
 
 [node name="Path2D" type="Path2D" parent="Player"]
@@ -42,22 +41,22 @@ unique_name_in_owner = true
 position = Vector2(-105, -81)
 rotation = 1.60145
 
-[node name="PineTree" parent="." instance=ExtResource("4_25qhv")]
+[node name="PineTree" parent="." instance=ExtResource("2_m4pl6")]
 position = Vector2(647, 247)
 
-[node name="PineTree2" parent="." instance=ExtResource("4_25qhv")]
+[node name="PineTree2" parent="." instance=ExtResource("2_m4pl6")]
 position = Vector2(423, 737)
 
-[node name="PineTree3" parent="." instance=ExtResource("4_25qhv")]
+[node name="PineTree3" parent="." instance=ExtResource("2_m4pl6")]
 position = Vector2(1387, 440)
 
-[node name="PineTree4" parent="." instance=ExtResource("4_25qhv")]
+[node name="PineTree4" parent="." instance=ExtResource("2_m4pl6")]
 position = Vector2(1311, 383)
 
-[node name="PineTree5" parent="." instance=ExtResource("4_25qhv")]
+[node name="PineTree5" parent="." instance=ExtResource("2_m4pl6")]
 position = Vector2(1459, 827)
 
-[node name="PineTree6" parent="." instance=ExtResource("4_25qhv")]
+[node name="PineTree6" parent="." instance=ExtResource("2_m4pl6")]
 position = Vector2(1319, 448)
 
 [node name="Timer" type="Timer" parent="."]
@@ -91,9 +90,22 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 155
 text = "BYE BYE"
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="NoodleShop" parent="." instance=ExtResource("4_bc7f6")]
+position = Vector2(158, 327)
 
-[node name="Counter" parent="CanvasLayer2" instance=ExtResource("4_25qhv")]
+[node name="EnterShop" type="Area2D" parent="."]
+script = ExtResource("5_vap4r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnterShop"]
+position = Vector2(397, 406)
+shape = SubResource("CapsuleShape2D_ehdcv")
+debug_color = Color(0.807843, 0.00392157, 0.992157, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(782, 613)
+texture = ExtResource("6_roua1")
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="EnterShop" to="EnterShop" method="_on_body_entered"]
+[connection signal="body_exited" from="EnterShop" to="EnterShop" method="_on_body_exited"]
