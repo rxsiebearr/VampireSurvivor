@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dmxefmypov6sj"]
 
-[ext_resource type="Texture2D" path="res://characters/noodleshop.png" id="1_23xqk"]
+[ext_resource type="Texture2D" uid="uid://df5r3yt7bwjh1" path="res://characters/noodleshop.png" id="1_23xqk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b87s5"]
 size = Vector2(429.25, 141)
