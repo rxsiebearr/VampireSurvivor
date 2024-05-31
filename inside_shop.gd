@@ -14,3 +14,6 @@ func _on_respawn_pressed():
 		get_tree().set_pause(false)
 	get_tree().change_scene_to_file("res://start_menu.tscn")
 	
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

@@ -67,6 +67,15 @@ position = Vector2(960.5, 539.5)
 scale = Vector2(1.49611, 1.64231)
 texture = ExtResource("5_jxkas")
 
+[node name="Quit" type="Button" parent="WinScreen"]
+offset_left = 880.0
+offset_top = 846.0
+offset_right = 1052.0
+offset_bottom = 930.0
+theme_override_fonts/font = ExtResource("5_5spq0")
+theme_override_font_sizes/font_size = 75
+text = "QUIT"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
@@ -84,8 +93,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/background = SubResource("StyleBoxFlat_7t5kf")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fve78")
-max_value = 500.0
-value = 500.0
+max_value = 30.0
+value = 30.0
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = 8
@@ -164,4 +173,5 @@ stream = ExtResource("8_nsutx")
 [connection signal="body_entered" from="LeaveShop" to="LeaveShop" method="_on_body_entered"]
 [connection signal="body_exited" from="LeaveShop" to="LeaveShop" method="_on_body_exited"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="pressed" from="WinScreen/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="GameOver/Respawn" to="." method="_on_respawn_pressed"]

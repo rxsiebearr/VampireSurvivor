@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 250
+var health = 30
 @onready var player = get_node("/root/InsideShop/Player")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -9,7 +9,7 @@ func _ready():
 	
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
-	velocity = direction * 1000.0
+	velocity = direction * 500.0
 	move_and_slide()
 	
 func take_damage():
