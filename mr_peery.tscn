@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjkiwyqt84x3j"]
+[gd_scene load_steps=12 format=3 uid="uid://cwhdqs8omi786"]
 
 [ext_resource type="Script" path="res://mr_peery.gd" id="1_8w63o"]
-[ext_resource type="Texture2D" path="res://angry peery-Sheet.png" id="2_sqjjd"]
-[ext_resource type="Texture2D" path="res://normal peery run-Sheet.png" id="3_0qtao"]
+[ext_resource type="Texture2D" uid="uid://ts47exdtw3ln" path="res://angry peery-Sheet.png" id="2_sqjjd"]
+[ext_resource type="Texture2D" uid="uid://5tmq5ksfmwmj" path="res://normal peery run-Sheet.png" id="3_0qtao"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cdnat"]
 atlas = ExtResource("2_sqjjd")

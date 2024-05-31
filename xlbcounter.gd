@@ -13,8 +13,12 @@ func initialize_label() -> void:
 	if label != null:
 		label_initialized = true
 		label.text = "x" + str(score)
-	
+
 func set_score(new_score: int) -> void:
 	score += 1 
-	label.text = "x" + str(score)  
-	
+	if label_initialized and label != null:
+		label.text = "x" + str(score)
+
+func reset_score() -> void:
+	score = 0
+	set_score(score)

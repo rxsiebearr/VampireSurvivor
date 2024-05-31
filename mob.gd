@@ -18,7 +18,10 @@ func take_damage():
 	animated_sprite_2d.play("hurt")
 	
 	if health == 0:
-		Xlbcounter.set_score(score + 1) 
+		var current_score = Xlbcounter.score
+		print("Current Score:", current_score)
+		Xlbcounter.set_score(current_score + 1) 
+		print("New Score:", Xlbcounter.score)
 		queue_free()
 		
 		const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")

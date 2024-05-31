@@ -1,13 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://cdcx6ekusripp"]
+[gd_scene load_steps=18 format=3 uid="uid://cdcx6ekusripp"]
 
 [ext_resource type="Script" path="res://leaveshop.gd" id="1_1s37m"]
 [ext_resource type="Script" path="res://inside_shop.gd" id="1_2thgf"]
 [ext_resource type="Texture2D" uid="uid://ewka2pvxile1" path="res://image.png" id="1_7bsgg"]
 [ext_resource type="PackedScene" uid="uid://dor42ffb0w0rd" path="res://player.tscn" id="1_771jf"]
-[ext_resource type="PackedScene" path="res://mr_peery.tscn" id="4_pd8go"]
+[ext_resource type="PackedScene" uid="uid://cwhdqs8omi786" path="res://mr_peery.tscn" id="4_pd8go"]
 [ext_resource type="FontFile" uid="uid://bqyym4ln8l2ij" path="res://Endless Boss Battle.ttf" id="5_5spq0"]
+[ext_resource type="Texture2D" uid="uid://cc2bjylan13py" path="res://bearbearwin.jpg" id="5_jxkas"]
 [ext_resource type="AudioStream" uid="uid://c65i1oqocwtci" path="res://Hans Zimmer - Oogway Ascends Kung Fu Panda Soundtrack.mp3" id="7_7h2lx"]
 [ext_resource type="AudioStream" uid="uid://xivhkwk3ak7f" path="res://chinese-doit_qjQ0ubS.mp3" id="8_nsutx"]
+[ext_resource type="Texture2D" uid="uid://dkqwqu61iya3j" path="res://gameoverbear.jpg" id="8_yyomd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6knom"]
 
@@ -57,31 +59,13 @@ position = Vector2(-132, 1040)
 
 [node name="WinScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+layer = 10
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="WinScreen"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0.317647)
-
-[node name="Label" type="Label" parent="WinScreen/ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -21.0
-offset_top = -11.5
-offset_right = 21.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 100
-text = "yipee"
+[node name="Sprite2D" type="Sprite2D" parent="WinScreen"]
+position = Vector2(960.5, 539.5)
+scale = Vector2(1.49611, 1.64231)
+texture = ExtResource("5_jxkas")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -125,31 +109,31 @@ position = Vector2(1147, 714)
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+process_mode = 3
+layer = 20
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="GameOver"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.580392)
+[node name="Sprite2D" type="Sprite2D" parent="GameOver"]
+position = Vector2(960.5, 540)
+scale = Vector2(1.49611, 1.22398)
+texture = ExtResource("8_yyomd")
 
-[node name="Label" type="Label" parent="GameOver/ColorRect"]
-layout_mode = 1
+[node name="Respawn" type="Button" parent="GameOver"]
+process_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -301.0
-offset_top = -106.0
-offset_right = 301.0
-offset_bottom = 106.0
+offset_left = 324.0
+offset_top = 71.0
+offset_right = 675.0
+offset_bottom = 155.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 155
-text = "BYE BYE"
+theme_override_fonts/font = ExtResource("5_5spq0")
+theme_override_font_sizes/font_size = 75
+text = "RESPAWN"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -180,3 +164,4 @@ stream = ExtResource("8_nsutx")
 [connection signal="body_entered" from="LeaveShop" to="LeaveShop" method="_on_body_entered"]
 [connection signal="body_exited" from="LeaveShop" to="LeaveShop" method="_on_body_exited"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="pressed" from="GameOver/Respawn" to="." method="_on_respawn_pressed"]
