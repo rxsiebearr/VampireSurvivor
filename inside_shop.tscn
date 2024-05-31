@@ -59,7 +59,8 @@ position = Vector2(-132, 1040)
 
 [node name="WinScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
-layer = 10
+process_mode = 3
+layer = 20
 visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="WinScreen"]
@@ -68,6 +69,7 @@ scale = Vector2(1.49611, 1.64231)
 texture = ExtResource("5_jxkas")
 
 [node name="Quit" type="Button" parent="WinScreen"]
+process_mode = 3
 offset_left = 880.0
 offset_top = 846.0
 offset_right = 1052.0
@@ -119,7 +121,7 @@ position = Vector2(1147, 714)
 [node name="GameOver" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 process_mode = 3
-layer = 20
+layer = 10
 visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="GameOver"]

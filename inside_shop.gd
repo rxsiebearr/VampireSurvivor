@@ -16,4 +16,8 @@ func _on_respawn_pressed():
 	
 
 func _on_quit_pressed() -> void:
+	if get_tree():
+		get_tree().set_pause(false)
+	print("quit")
 	get_tree().quit()
+	
