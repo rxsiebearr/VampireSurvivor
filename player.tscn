@@ -95,6 +95,10 @@ position = Vector2(-0.75, -16)
 shape = SubResource("RectangleShape2D_4aqcs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -603
+limit_top = -439
+limit_right = 2374
+limit_bottom = 1234
 
 [node name="Gun" parent="." instance=ExtResource("3_s27u5")]
 position = Vector2(1, -45)

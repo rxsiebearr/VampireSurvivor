@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdcx6ekusripp"]
+[gd_scene load_steps=10 format=3 uid="uid://bnep3o34sajnl"]
 
 [ext_resource type="Script" path="res://leaveshop.gd" id="1_1s37m"]
 [ext_resource type="Script" path="res://inside_shop.gd" id="1_2thgf"]
 [ext_resource type="Texture2D" uid="uid://ewka2pvxile1" path="res://image.png" id="1_7bsgg"]
 [ext_resource type="PackedScene" uid="uid://dor42ffb0w0rd" path="res://player.tscn" id="1_771jf"]
-[ext_resource type="PackedScene" uid="uid://bjkiwyqt84x3j" path="res://mr_peery.tscn" id="4_pd8go"]
+[ext_resource type="PackedScene" path="res://mr_peery.tscn" id="4_pd8go"]
 [ext_resource type="FontFile" uid="uid://bqyym4ln8l2ij" path="res://Endless Boss Battle.ttf" id="5_5spq0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6knom"]
@@ -26,12 +26,9 @@ corner_radius_bottom_left = 10
 [node name="InsideShop" type="Node2D"]
 script = ExtResource("1_2thgf")
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-layer = -100
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
-position = Vector2(960, 540)
-scale = Vector2(1.5, 1.57205)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(887, 397)
+scale = Vector2(2.32396, 2.43559)
 texture = ExtResource("1_7bsgg")
 
 [node name="LeaveShop" type="Area2D" parent="."]
@@ -42,7 +39,7 @@ position = Vector2(-9, 2)
 shape = SubResource("CircleShape2D_6knom")
 
 [node name="Player" parent="." instance=ExtResource("1_771jf")]
-position = Vector2(159, 1002)
+position = Vector2(-132, 1040)
 
 [node name="WinScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -114,6 +111,7 @@ position = Vector2(1147, 714)
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="GameOver"]
 anchors_preset = 15
