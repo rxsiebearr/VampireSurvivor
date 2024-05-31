@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c65i1oqocwtci"
+path="res://.godot/imported/Hans Zimmer - Oogway Ascends Kung Fu Panda Soundtrack.mp3-a74300ea35644666a90d0e8b712c64f1.mp3str"
+
+[deps]
+
+source_file="res://Hans Zimmer - Oogway Ascends Kung Fu Panda Soundtrack.mp3"
+dest_files=["res://.godot/imported/Hans Zimmer - Oogway Ascends Kung Fu Panda Soundtrack.mp3-a74300ea35644666a90d0e8b712c64f1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
