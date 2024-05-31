@@ -1,10 +1,9 @@
 extends CharacterBody2D
 
 var health = 3
-var score = Xlbcounter.score
 @onready var player = get_node("/root/Game/Player")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-
+var score = Xlbcounter.score 
 func _ready():
 	animated_sprite_2d.play("walk")
 	
@@ -19,7 +18,7 @@ func take_damage():
 	animated_sprite_2d.play("hurt")
 	
 	if health == 0:
-		Xlbcounter.set_score(score + 1)
+		Xlbcounter.set_score(score + 1) 
 		queue_free()
 		
 		const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")
