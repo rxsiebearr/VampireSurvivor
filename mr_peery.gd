@@ -24,5 +24,6 @@ func take_damage():
 		var smoke = SMOKE_SCENE.instantiate()
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
+		%WinSound.play()
 		%WinScreen.visible = true
 		get_tree().paused = true

@@ -172,6 +172,10 @@ stream = ExtResource("7_7h2lx")
 process_mode = 3
 stream = ExtResource("8_nsutx")
 
+[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+
 [connection signal="body_entered" from="LeaveShop" to="LeaveShop" method="_on_body_entered"]
 [connection signal="body_exited" from="LeaveShop" to="LeaveShop" method="_on_body_exited"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
