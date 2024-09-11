@@ -22,3 +22,4 @@ func set_score(new_score: int) -> void:
 func reset_score() -> void:
 	score = 0
 	set_score(score)
+	print("reset")

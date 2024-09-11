@@ -22,10 +22,10 @@ func take_damage():
 		print("Current Score:", current_score)
 		Xlbcounter.set_score(current_score + 1) 
 		print("New Score:", Xlbcounter.score)
+		Xlbcounter.initialize_label()
 		queue_free()
 		
 		const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")
 		var smoke = SMOKE_SCENE.instantiate()
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
-

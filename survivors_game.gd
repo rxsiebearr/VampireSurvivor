@@ -29,6 +29,4 @@ func _on_respawn_pressed():
 	if get_tree():
 		get_tree().set_pause(false)
 	get_tree().change_scene_to_file("res://start_menu.tscn")
-	Xlbcounter.reset_score()
-	
-
+	Xlbcounter.score = 0
