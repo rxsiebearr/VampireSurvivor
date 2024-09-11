@@ -4,11 +4,12 @@ var entered = false
 
 func _on_body_entered(body: PhysicsBody2D):
 	if body.is_in_group("store"):
+		$EnterLabel.visible = true
 		entered = true
 
 func _on_body_exited(body):
 	entered = false
-
+	$EnterLabel.visible = false
 func _process(delta):
 	if entered == true:
 		if Input.is_action_just_pressed("enter"):
