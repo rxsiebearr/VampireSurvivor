@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://chvr0o4nt6uok"]
+
+[ext_resource type="Texture2D" uid="uid://c2qc5xrxlwr2t" path="res://jade bullet.png" id="1_mw3lw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r1dre"]
+radius = 137.364
+
+[node name="Key" type="Area2D"]
+process_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mw3lw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_r1dre")
