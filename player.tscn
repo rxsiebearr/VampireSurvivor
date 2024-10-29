@@ -80,7 +80,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_ppbc1")
 
 [node name="Po" type="AnimatedSprite2D" parent="."]
@@ -90,15 +90,11 @@ sprite_frames = SubResource("SpriteFrames_xd7q5")
 animation = &"walk"
 frame_progress = 0.229076
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.75, -16)
 shape = SubResource("RectangleShape2D_4aqcs")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_left = -603
-limit_top = -439
-limit_right = 2374
-limit_bottom = 1234
 
 [node name="Gun" parent="." instance=ExtResource("3_s27u5")]
 position = Vector2(1, -45)

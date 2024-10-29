@@ -82,6 +82,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Xlbcounter="*res://xlbcounter.gd"
+Globalgroup="*res://globalgroup.gd"
 
 [display]
 
@@ -96,6 +97,10 @@ project/assembly_name="Getting started with Godot 4"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/colorpicker_presets/plugin.cfg")
+
+[global_group]
+
+market=""
 
 [input]
 

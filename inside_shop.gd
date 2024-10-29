@@ -1,8 +1,9 @@
 extends Node2D
+@onready var camera = get_node("/root/InsideShop/Player/Camera2D")
 
 func _ready():
 	$BackgroundMusic.play()
-	
+
 func _on_player_health_depleted():
 	$BackgroundMusic.stop()
 	$DeathSound.play()

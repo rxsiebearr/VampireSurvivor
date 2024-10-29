@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dkqwqu61iya3j" path="res://gameoverbear.jpg" id="8_yyomd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6knom"]
+radius = 68.593
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7t5kf"]
 bg_color = Color(0.729412, 0, 0, 1)
@@ -43,19 +44,19 @@ size = Vector2(38, 1757)
 script = ExtResource("1_2thgf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(887, 397)
-scale = Vector2(2.32396, 2.43559)
+position = Vector2(960, 540.5)
+scale = Vector2(1.5, 1.5706)
 texture = ExtResource("1_7bsgg")
 
 [node name="LeaveShop" type="Area2D" parent="."]
 script = ExtResource("1_1s37m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeaveShop"]
-position = Vector2(-9, 2)
+position = Vector2(133, 451)
 shape = SubResource("CircleShape2D_6knom")
 
 [node name="Player" parent="." instance=ExtResource("1_771jf")]
-position = Vector2(-132, 1040)
+position = Vector2(209, 991)
 
 [node name="WinScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -147,6 +148,7 @@ theme_override_font_sizes/font_size = 75
 text = "RESPAWN"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(927, -330)

@@ -1,5 +1,50 @@
-[gd_scene format=3 uid="uid://c23wvnwwsx7ey"]
+[gd_scene load_steps=8 format=3 uid="uid://c23wvnwwsx7ey"]
+
+[ext_resource type="Texture2D" uid="uid://d0qs8y5ngdc5o" path="res://grass path.png" id="1_ge16u"]
+[ext_resource type="Texture2D" uid="uid://b74gqnujitvm6" path="res://sushi.png" id="2_2l38u"]
+[ext_resource type="Texture2D" uid="uid://dsnr0ssbc342t" path="res://bearbeartanghulu.png" id="3_id8gg"]
+[ext_resource type="PackedScene" uid="uid://dor42ffb0w0rd" path="res://player.tscn" id="3_p6tpk"]
+[ext_resource type="Script" path="res://area_2d.gd" id="4_rwagj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pti0"]
+size = Vector2(2034, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iamx8"]
+size = Vector2(2072, 322)
 
 [node name="InsideMarket" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Path" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1, 1.6875)
+texture = ExtResource("1_ge16u")
+
+[node name="Sushi" type="Sprite2D" parent="."]
+position = Vector2(655, 234)
+texture = ExtResource("2_2l38u")
+
+[node name="Tanghulu" type="Sprite2D" parent="."]
+position = Vector2(445, 254)
+texture = ExtResource("3_id8gg")
+
+[node name="Player" parent="." instance=ExtResource("3_p6tpk")]
+position = Vector2(96, 991)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(957, 851)
+shape = SubResource("RectangleShape2D_6pti0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-60, -5, 0, -1, 2, 1082, 1917, 1082, 1917, 0, 5, 0, 2, -61, 1917, -64, 1917, -7, 1964, 0, 1964, 1098, 1923, 1079, 1913, 1159, -1, 1143, -1, 1082, -65, 1082)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_rwagj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(978, 962)
+shape = SubResource("RectangleShape2D_iamx8")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
