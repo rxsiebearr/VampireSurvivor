@@ -6,7 +6,6 @@
 radius = 137.364
 
 [node name="Key" type="Area2D"]
-process_mode = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_mw3lw")

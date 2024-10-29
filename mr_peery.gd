@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-var health = 30
+var health = 3
 @onready var player = get_node("/root/InsideShop/Player")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-var key_scene := preload("res://key.tscn")
+
 func _ready():
 	animated_sprite_2d.play("normal")
 	
@@ -24,8 +24,13 @@ func take_damage():
 		var smoke = SMOKE_SCENE.instantiate()
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
-		var key := key_scene.instantiate()
-		add_child(key)
+		
+		const KEY_SCENE = preload("res://key.tscn")
+		var key = KEY_SCENE.instantiate()
+		get_parent().add_child(key)
+		key.global_position = global_position
+		
+		
 		
 		#%WinSound.play()
 		#%WinScreen.visible = true
