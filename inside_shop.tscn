@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cdcx6ekusripp"]
+[gd_scene load_steps=14 format=3 uid="uid://cdcx6ekusripp"]
 
 [ext_resource type="Script" path="res://leaveshop.gd" id="1_1s37m"]
 [ext_resource type="Script" path="res://inside_shop.gd" id="1_2thgf"]
@@ -28,18 +28,6 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qq38"]
-size = Vector2(3082, 39)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhhnt"]
-size = Vector2(26.875, 1801.75)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks0kt"]
-size = Vector2(3207, 104)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pc44"]
-size = Vector2(38, 1757)
-
 [node name="InsideShop" type="Node2D"]
 script = ExtResource("1_2thgf")
 
@@ -56,6 +44,7 @@ position = Vector2(133, 451)
 shape = SubResource("CircleShape2D_6knom")
 
 [node name="Player" parent="." instance=ExtResource("1_771jf")]
+visible = false
 position = Vector2(209, 991)
 
 [node name="WinScreen" type="CanvasLayer" parent="."]
@@ -98,6 +87,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_7t5kf")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fve78")
 max_value = 30.0
 value = 30.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = 8
@@ -115,6 +105,7 @@ theme_override_colors/font_color = Color(0.635294, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_5spq0")
 theme_override_font_sizes/font_size = 75
 text = "MR. PEERY"
+metadata/_edit_use_anchors_ = true
 
 [node name="MrPeery" parent="." instance=ExtResource("4_pd8go")]
 position = Vector2(1147, 714)
@@ -146,26 +137,6 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_5spq0")
 theme_override_font_sizes/font_size = 75
 text = "RESPAWN"
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(927, -330)
-shape = SubResource("RectangleShape2D_2qq38")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-614.438, 442.125)
-shape = SubResource("RectangleShape2D_yhhnt")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(989.5, 1292)
-shape = SubResource("RectangleShape2D_ks0kt")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2400, 415.5)
-scale = Vector2(1, 0.996972)
-shape = SubResource("RectangleShape2D_4pc44")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_7h2lx")

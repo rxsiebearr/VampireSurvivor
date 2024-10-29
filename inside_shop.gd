@@ -3,6 +3,7 @@ extends Node2D
 
 func _ready():
 	$BackgroundMusic.play()
+	camera.enabled = false
 
 func _on_player_health_depleted():
 	$BackgroundMusic.stop()
